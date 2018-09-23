@@ -87,16 +87,32 @@ def testNaiveBayes(testdoc,logprior,loglikelihood,C,V):
 
 
 def main():
-	V,ndoc,Cwords,Ccount, Cbackets = importfiles("imdb_labelled.txt")
+	# merge files
+	filenames = ['imdb_labelled.txt', 'amazon_cells_labelled.txt', 'yelp_labelled.txt']
+	with open('./trainfile.txt', 'w') as outfile:
+	    for fname in filenames:
+	        with open(fname) as infile:
+	            outfile.write(infile.read())
+	V,ndoc,Cwords,Ccount, Cbackets = importfiles("trainfile.txt")
+
+
 	logpriors,loglikelihoods = train_NaiveBayes(Ccount.keys(),ndoc,Ccount,Cwords,V,Cbackets)
 	test = open("test.txt").readlines()
+	resultsfile= open("results.txt", "w")
+    #f.write("Woops! I have deleted the content!")
 	count = 0
 	for i in test:
 		splited = i.split("\t")
-		print(testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n"))
+		res=testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n")
+		res=''.join(res)
+		#print(testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n"))
 		if testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V) == splited[1].strip("\n"):
 			count += 1
-	print(count, "/", len(test))
+		resultsfile.write(res)
+
+	acc=(count/len(test))*100
+	#print(count, "/", len(test))
+	print(acc)
 		
 main()
 	
