@@ -1,4 +1,6 @@
-
+#@author: Faith Kilonzi
+#FILE: naivebayes.py
+#
 
 from math import *
 def importfiles(filename):
@@ -88,11 +90,11 @@ def testNaiveBayes(testdoc,logprior,loglikelihood,C,V):
 
 def main():
 	# merge files
-	filenames = ['imdb_labelled.txt', 'amazon_cells_labelled.txt', 'yelp_labelled.txt']
-	with open('./trainfile.txt', 'w') as outfile:
-	    for fname in filenames:
-	        with open(fname) as infile:
-	            outfile.write(infile.read())
+	# filenames = ['imdb_labelled.txt', 'amazon_cells_labelled.txt', 'yelp_labelled.txt']
+	# with open('./trainfile.txt', 'w') as outfile:
+	#     for fname in filenames:
+	#         with open(fname) as infile:
+	#             outfile.write(infile.read())
 	V,ndoc,Cwords,Ccount, Cbackets = importfiles("trainfile.txt")
 
 
