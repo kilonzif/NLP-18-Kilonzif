@@ -86,19 +86,25 @@ def testNaiveBayes(testdoc,logprior,loglikelihood,C,V):
 
 
 
-def main():
-	V,ndoc,Cwords,Ccount, Cbackets = importfiles("imdb_labelled.txt")
+def main(filename):
+	V,ndoc,Cwords,Ccount, Cbackets = importfiles(filename)
 	logpriors,loglikelihoods = train_NaiveBayes(Ccount.keys(),ndoc,Ccount,Cwords,V,Cbackets)
 	test = open("test.txt").readlines()
 	count = 0
+	res=" "
+	resultsfile= open("results_file.txt", "w")
 	for i in test:
 		splited = i.split("\t")
-		print(testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n"))
+		#print(testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n"))
+		res=testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n") +'\n'
+		res =' '.join(res)
 		if testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V) == splited[1].strip("\n"):
 			count += 1
-	print(count, "/", len(test))
+		resultsfile.write(res)
+	#print(count, "/", len(test))
 		
-main()
+
+main('training.txt')
 	
 	
 
