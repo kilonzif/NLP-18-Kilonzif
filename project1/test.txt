@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Echo Problem....Very unsatisfactory	0
 you could only take 2 videos at a time and the quality was very poor.	0
 don't waste your money.	0
@@ -8,6 +9,8 @@ You also cannot take pictures with it in the case because the lense is covered.	
 Phone falls out easily.	0
 It didn't work, people can not hear me when I talk.	0
 The text messaging feature is really tricky to use.	0
+=======
+>>>>>>> 11047601cd88c991cc382eedf57466b564e1083c
 I'm really disappointed all I have now is a charger that doesn't work.	0
 Painful on the ear.	0
 Lasted one day and then blew up.	0
@@ -18,6 +21,7 @@ What a piece of junk.. I lose more calls on this phone.	0
 Item Does Not Match Picture.	0
 The only thing that disappoint me is the infra red port (irda).	0
 You can not answer calls with the unit, never worked once!	0
+<<<<<<< HEAD
 Good , works fine.	1
 For the price this was a great deal.	1
 Great price, too!	1
@@ -598,3 +602,25 @@ The live music on Fridays totally blows.	0
 I've never been more insulted or felt disrespected.	0
 Very friendly staff.	1
 It is worth the drive.	1
+=======
+The opening sequence of this gem is a classic, and the cat n mouse games that follow are a delight to watch.  	1
+Fans of the genre will be in heaven.  	1
+Lange had become a great actress.  	1
+It looked like a wonderful story.  	1
+I never walked out of a movie faster.  	0
+I just got bored watching Jessice Lange take her clothes off!  	0
+Unfortunately, any virtue in this film's production work was lost on a regrettable script.  	0
+In a word, it is embarrassing.  	0
+Exceptionally bad!  	0
+All in all its an insult to one's intelligence and a huge waste of money.  	0
+The refried beans that came with my meal were dried out and crusty and the food was bland.	0
+Spend your money and time some place else.	0
+A lady at the table next to us found a live green caterpillar In her salad.	0
+the presentation of the food was awful.	0
+I can't tell you how disappointed I was.	0
+I think food should have flavor and texture and both were lacking.	0
+Appetite instantly gone.	0
+Overall I was not impressed and would not go back.	0
+The whole experience was underwhelming, and I think we'll just go to Ninja Sushi next time.	0
+Then, as if I hadn't wasted enough of my life there, they poured salt in the wound by drawing out the time it took to bring the check.	0
+>>>>>>> 11047601cd88c991cc382eedf57466b564e1083c

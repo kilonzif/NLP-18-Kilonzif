@@ -1,6 +1,10 @@
-
+#@author: Faith Kilonzi
+#FILE: naivebayes.py
+#
 
 from math import *
+import sys
+
 def importfiles(filename):
 	file=open(filename,"r").readlines()
 	ndoc=len(file)
@@ -82,29 +86,23 @@ def testNaiveBayes(testdoc,logprior,loglikelihood,C,V):
 			argmax = sumc
 
 	return lclass
-
-
-
-
 def main(filename):
-	V,ndoc,Cwords,Ccount, Cbackets = importfiles(filename)
+	V,ndoc,Cwords,Ccount, Cbackets = importfiles("training.txt")
 	logpriors,loglikelihoods = train_NaiveBayes(Ccount.keys(),ndoc,Ccount,Cwords,V,Cbackets)
-	test = open("test.txt").readlines()
+	test = open(filename).readlines()
 	count = 0
-	res=" "
 	resultsfile= open("results_file.txt", "w")
 	for i in test:
 		splited = i.split("\t")
-		#print(testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n"))
-		res=testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n") +'\n'
+		res=testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n")
 		res =' '.join(res)
 		if testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V) == splited[1].strip("\n"):
 			count += 1
 		resultsfile.write(res)
-	#print(count, "/", len(test))
 		
 
-main('training.txt')
+if __name__== "__main__":
+        main(sys.argv[1])
 	
 	
 
