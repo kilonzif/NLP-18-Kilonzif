@@ -4,27 +4,28 @@
 
 import sys
 
-#function to implement minimum edit distance algorithm
+#function minEditDistance() to implement minimum edit distance algorithm
 #@source parameter - string from which transformation happens
+#@target parameter - string to which the source is changed to
 def minEditDistance(source,target):
     n=len(source)
 
     m=len(target)
 
-    D =[[0]*(m+1) for _ in range(n+1)]#the matriD whose last element ->edit distance
-
-    for i in range(0,n+1): #initialization of base case values
+    D =[[0]*(m+1) for _ in range(n+1)]#the matrix D
+    #initialization of base case values
+    for i in range(0,n+1): 
 
         D[i][0]=i
     for j in range(0,m+1):
 
         D[0][j]=j
-    #recurrence function to implement dynamic Edit Distance
-    for i in range (1,n+1):
+    #recurrence function to implement Edit Distance dynamically
+    for i in range (1,n+1): #rows
 
-        for j in range(1,m+1):
-
-            if source[i-1]==target[j-1]:
+        for j in range(1,m+1): #columns
+            #when row value (top) is equal to column value (left)
+            if source[i-1]==target[j-1]: 
                 D[i][j] = D[i-1][j-1] 
 
             else :
@@ -35,8 +36,16 @@ def minEditDistance(source,target):
           target +" is "+ str(D[i][j]))
 
 
-#driver function to run the program
+#driver function to run the program to take user input
 if __name__== "__main__":
-    minEditDistance(sys.argv[1], sys.argv[2])
+
+    #error handling
+    if len(sys.argv) == 3:
+        minEditDistance(sys.argv[1], sys.argv[2])
+    else:
+        print ('You failed to provide enough parameters (2) !')
+        sys.exit(1) 
+
+    
 
     
