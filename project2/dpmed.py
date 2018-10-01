@@ -8,6 +8,9 @@ import sys
 #@source parameter - string from which transformation happens
 #@target parameter - string to which the source is changed to
 def minEditDistance(source,target):
+    insertionCost=1
+    deletionCost=1
+    substitutionCost=2
     n=len(source)
 
     m=len(target)
@@ -29,7 +32,9 @@ def minEditDistance(source,target):
                 D[i][j] = D[i-1][j-1] 
 
             else :
-                D[i][j]= min(D[i][j-1],D[i-1][j],D[i-1][j-1])+1
+                D[i][j] = min(D[i][j-1]+ insertionCost,   
+                                   D[i-1][j]+ deletionCost,    
+                                   D[i-1][j-1]+ substitutionCost) 
 
    
     print("Minimum edit distance between " + source +" and " +
