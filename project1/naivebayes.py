@@ -94,11 +94,12 @@ def main(filename):
 	resultsfile= open("results_file.txt", "w")
 	for i in test:
 		splited = i.split("\t")
-		res=testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V), splited[1].strip("\n")
+		res=testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V)
+		#, splited[1].replace("\n", "")
 		res =' '.join(res)
-		if testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V) == splited[1].strip("\n"):
+		if testNaiveBayes(splited[0],logpriors,loglikelihoods,Cwords.keys(),V) == splited[1].replace("\n", ""):
 			count += 1
-		resultsfile.write(res)
+		resultsfile.write(res + "\n")
 		
 
 if __name__== "__main__":
