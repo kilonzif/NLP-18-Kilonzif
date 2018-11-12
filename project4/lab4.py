@@ -86,7 +86,7 @@ class classifier:
         accuracy = roc_auc_score(Y_test,self.classifierType.predict_proba(X_test)[:,1])
         
         #printing the accuracy
-        print ("Accuracy :", round(accuracy, 2))
+        print ("Accuracy :", round(accuracy, 3))
 
    
     '''
